@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href= "/public/assets/app.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="/assets/logo2.png">
+  <title>Aptsanket</title>
+  <script>
+    const roomName = "<%= roomName %>"
+  </script>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    #message-container {
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    #message-container div {
+      background-color: #CCC;
+      padding: 5px;
+    }
+
+    /* #message-container div:nth-child(2n) {
+      background-color: #FFF;
+    } */
+
+    #send-container {
+      border-radius: 25px;
+      position: fixed;
+      padding-bottom: 30px;
+      bottom: 0;
+      background-color: #82C3EC;
+      max-width: 1200px;
+      width: 80%;
+      display: flex;
+    }
+
+    #message-input {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+    <div class="logo-image">
+        <img src="/assets/logo2.png" class="img-fluid">
+  </div>
+  <a href="/" class="navbar-brand">Aptsanket</a>
+   <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a href="/login" class="nav-link">Logout</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+  <div id="message-container" class="mt-5"></div>
+  <form id="send-container">
+    <input type="text" id="message-input" class="form-control">
+    <button type="submit" id="send-button" class="btn btn-primary w-30 me-3 mb-3">Send</button>
+  </form>
+</body>
+</html>
